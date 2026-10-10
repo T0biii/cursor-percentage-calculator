@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProzentRechner</title>
+    <meta
+      name="description"
+      content="Percentage calculator for a share of a number, a percentage, a change, and adding or subtracting a percent."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="mast">
+        <div>
+          <p class="eyebrow" id="eyebrow">In the browser</p>
+          <h1>ProzentRechner</h1>
+          <p class="lede" id="lede">
+            A share of a number, a percentage, a change, or a markup and markdown.
+          </p>
+        </div>
+        <label class="lang">
+          <span id="lang-label">Language</span>
+          <select id="lang"></select>
+        </label>
+      </header>
+
+      <div class="modes" id="modes" role="tablist" aria-label="Calculation"></div>
+
+      <form id="calc" novalidate>
+        <div class="fields">
+          <label>
+            <span id="label-a">Percent</span>
+            <input id="input-a" inputmode="decimal" autocomplete="off" spellcheck="false" />
+          </label>
+          <label>
+            <span id="label-b">Number</span>
+            <input id="input-b" inputmode="decimal" autocomplete="off" spellcheck="false" />
+          </label>
+        </div>
+        <fieldset id="direction">
+          <legend id="direction-legend">Direction</legend>
+          <label>
+            <input type="radio" name="direction" value="increase" checked />
+            <span id="increase-label">Increase</span>
+          </label>
+          <label>
+            <input type="radio" name="direction" value="decrease" />
+            <span id="decrease-label">Decrease</span>
+          </label>
+        </fieldset>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <p class="result-kicker" id="result-label">Result</p>
+        <p class="result-value" id="result-value">—</p>
+        <p class="result-detail" id="result-detail"></p>
+        <p class="formula" id="formula-line">
+          <span id="formula-label">Working</span>
+          <span id="formula"></span>
+        </p>
+        <button type="button" id="copy" disabled>Copy result</button>
+      </section>
+
+      <noscript>
+        <p>ProzentRechner needs JavaScript. The calculation still stays in your browser.</p>
+      </noscript>
+    </main>
+    <footer id="footer">
+      The calculation stays in this browser and is not sent. Only the chosen language is saved on this device.
+    </footer>
+    <script src="calc.js"></script>
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
